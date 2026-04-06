@@ -1,52 +1,97 @@
 # JavaScript Algorithms & Utilities
 
-A collection of JavaScript algorithms and utility functions, created entirely using **OpenClaw** with **Ollama** (`qwen2.5-coder:3b`) as the code generation model.
+A collection of classic sorting and searching algorithms implemented in JavaScript.
 
-## 🤖 How This Repo Was Created
+## 📁 Sorting Algorithms
 
-This repository was built using an AI coding workflow:
+### **Bubble Sort** (`bubbleSort.js`)
+Repeatedly swaps adjacent elements if they're in wrong order. Simple but inefficient for large datasets.
 
-1. **OpenClaw** — AI agent orchestrator
-2. **Ollama** — Local LLM runner (`qwen2.5-coder:3b`)
-3. All code was generated via direct `ollama run` commands, then committed and pushed to GitHub
+### **Selection Sort** (`selectionSort.js`)
+Finds the minimum element and places it at the beginning. Repeats for remaining unsorted portion.
 
-No sub-agents were used — all code generation happened through direct exec calls.
+### **Insertion Sort** (`insertionSort.js`)
+Builds the sorted array one element at a time by inserting each element into its correct position.
 
-## 📁 Contents
+### **Quick Sort** (`quickSort.js`)
+Divide-and-conquer algorithm that picks a pivot and partitions elements around it. Average case O(n log n).
 
-### Sorting Algorithms (3)
-- **`bubbleSort.js`** — Bubble Sort with early exit optimization
-- **`selectionSort.js`** — Selection Sort algorithm
-- **`insertionSort.js`** — Insertion Sort algorithm
+### **Merge Sort** (`mergeSort.js`)
+Divide-and-conquer algorithm that splits the array in half, sorts each half, then merges them. Guaranteed O(n log n).
 
-### Search Algorithms (3)
-- **`binarySearch.js`** — Binary Search (works on sorted arrays)
-- **`linearSearch.js`** — Linear Search (works on any array)
-- **`interpolationSearch.js`** — Interpolation Search (works on uniformly distributed sorted arrays)
+### **Heap Sort** (`heapSort.js`)
+Uses a binary heap data structure to sort. In-place with O(n log n) time complexity.
 
-### Utility Functions
-- **`stringUtils.js`** — String utilities: `capitalize()`, `reverse()`, `wordCount()`
-- **`formatCurrency.js`** — Formats numbers as USD currency (e.g., `1234.56` → `"$1,234.56"`)
+### **Shell Sort** (`shellSort.js`)
+Generalization of insertion sort that allows swapping of far-apart elements using a gap sequence.
 
-### React Component
-- **`Login.jsx`** — React login form component with email & password validation (8+ character password requirement)
+### **Counting Sort** (`countingSort.js`)
+Non-comparison sort that counts occurrences of each value. Efficient for small integer ranges.
+
+### **Radix Sort** (`radixSort.js`)
+Sorts numbers digit by digit from least to most significant. Works with integers of fixed length.
+
+### **Bucket Sort** (`bucketSort.js`)
+Distributes elements into buckets, sorts each bucket, then concatenates. Best for uniformly distributed data.
+
+### **Cocktail Sort** (`cocktailSort.js`)
+Bidirectional version of bubble sort that traverses the array in both directions.
+
+### **Comb Sort** (`combSort.js`)
+Improvement over bubble sort that uses a shrinking gap to eliminate turtles (small values at the end).
+
+### **Tim Sort** (`timSort.js`)
+Hybrid of merge sort and insertion sort. Used as the default sort in Python and Java for objects.
+
+### **Cycle Sort** (`cycleSort.js`)
+Minimizes the number of memory writes. Optimal for scenarios where write operations are expensive.
+
+---
+
+## 🔍 Searching Algorithms
+
+### **Linear Search** (`linearSearch.js`)
+Checks each element sequentially until the target is found. Works on any array.
+
+### **Binary Search** (`binarySearch.js`)
+Divides the sorted array in half repeatedly to find the target. O(log n) time complexity.
+
+### **Interpolation Search** (`interpolationSearch.js`)
+Improved binary search that estimates the position of the target based on values. Works best on uniformly distributed sorted arrays.
+
+### **Fibonacci Search** (`fibonacciSearch.js`)
+Uses Fibonacci numbers to divide the array. Alternative to binary search with division-free operations.
+
+### **Exponential Search** (`exponentialSearch.js`)
+Finds a range using exponential steps, then performs binary search. Useful for unbounded arrays.
+
+### **Jump Search** (`jumpSearch.js`)
+Jumps ahead by fixed steps (√n) then performs linear search in the identified block.
+
+### **Ternary Search** (`ternarySearch.js`)
+Divides the sorted array into three parts instead of two. Finds the target using two midpoints.
+
+---
+
+## 🛠️ Utilities
+
+### **String Utilities** (`stringUtils.js`)
+Helper functions: `capitalize()`, `reverse()`, `wordCount()`
+
+### **Login Component** (`Login.jsx`)
+React login form with email and password validation.
+
+---
 
 ## 🚀 Usage
 
-Each file is standalone and includes example usage with `console.log`. Run any file with Node.js:
+Run any file with Node.js:
 
 ```bash
 node bubbleSort.js
 node binarySearch.js
 node stringUtils.js
 ```
-
-## 🛠️ Tech Stack
-
-- **JavaScript** (ES6+)
-- **React** (Login.jsx)
-- **OpenClaw** — AI agent framework
-- **Ollama** — Local LLM inference
 
 ## 📄 License
 
